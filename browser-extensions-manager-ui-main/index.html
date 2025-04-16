@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/queries.css">
+
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+  </head>
+  <body class="dark">
+    <header class="header dark">
+      <img src="./assets/images/logo.svg" alt="extension logo" class="logo" />
+      <button class="mode-state dark" aria-label="Toggle dark mode">
+        <img
+          src="./assets/images/icon-moon.svg"
+          alt="moon icon"
+          class="moon-icon"
+        />
+        <img
+          src="./assets/images/icon-sun.svg"
+          alt="sun icon"
+          class="sun-icon"
+        />
+      </button>
+    </header>
+
+    <main>
+      <div class="">
+        <h1 class="heading dark">Extensions Lists</h1>
+        <div class="button-states">
+          <button class="btn dark active-btn" data-filter="all">All</button>
+          <button class="btn dark" data-filter="active">Active</button>
+          <button class="btn dark" data-filter="inactive">Inactive</button>
+        </div>
+      </div>
+
+      <section class="extensions" id="extensionList">
+        <div class="extension dark">
+          <div class="extension-info">
+            <img
+              src="./assets/images/logo-devlens.svg"
+              class="extension-logo"
+              alt="DevLens logo"
+            />
+            <div>
+              <h3 class="extension-name dark">DevLens</h3>
+              <p class="extension-description dark">
+                Quickly inspect page layouts and visualize element boundaries.
+              </p>
+            </div>
+          </div>
+          <div class="action-btn">
+            <button class="remove-btn dark">Remove</button>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Confirmation Modal -->
+<div class="modal-overlay hidden">
+  <div class="modal">
+    <h3 class="modal-title dark">Remove Extension</h3>
+    <p class="modal-message dark">Are you sure you want to remove this extension?</p>
+    <div class="modal-actions">
+      <button class="modal-cancel btn dark">Cancel</button>
+      <button class="modal-confirm btn dark">Remove</button>
+    </div>
+  </div>
+</div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>

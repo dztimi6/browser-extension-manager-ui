@@ -1,0 +1,482 @@
+:root {
+  /* Color Variables */
+  /* Neutral */
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+
+  /* Red */
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+
+  /* Gradients */
+  --light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+  /* Typography */
+  --ff: "Noto Sans", sans-serif;
+}
+
+/* ============ BASE STYLES ============ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--ff);
+  background-image: var(--light-gradient);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background-image 0.3s ease, color 0.3s ease;
+}
+
+/* ============ TYPOGRAPHY ============ */
+.heading {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* ============ LAYOUT COMPONENTS ============ */
+.header {
+  background-color: var(--neutral-0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.2rem auto;
+  padding: 1.2rem;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  max-width: 120rem;
+}
+
+main {
+  margin: 3rem auto;
+  max-width: 120rem;
+  padding: 0 4.8rem;
+}
+
+main > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+/* ============ UI COMPONENTS ============ */
+/* Logo */
+.logo {
+  height: 3.2rem;
+  transition: filter 0.3s ease;
+}
+
+/* Theme Toggle */
+.mode-state {
+  background-color: var(--neutral-100);
+  padding: 0.6rem;
+  border: 1px solid var(--neutral-100);
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+}
+
+.mode-state img {
+  height: 1.7rem;
+  width: 1.7rem;
+  transition: opacity 0.3s ease;
+}
+
+.sun-icon {
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.moon-icon {
+  opacity: 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--neutral-0);
+  color: var(--neutral-600);
+  font-weight: 500;
+  padding: 0.4rem 1.4rem;
+  border-radius: 1.5rem;
+  border: 1px solid var(--neutral-300);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--neutral-600);
+  opacity: 0.7;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--red-400);
+  outline-offset: 2px;
+}
+
+.button-states {
+  display: flex;
+  column-gap: 0.8rem;
+}
+
+.button-states .active-btn {
+  background-color: var(--red-700);
+  color: var(--neutral-0);
+}
+
+.remove-btn {
+  background-color: var(--neutral-0);
+  padding: 0.4rem 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border: 1px solid var(--neutral-300);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: var(--red-400);
+}
+
+.remove-btn:active {
+  background-color: var(--red-500);
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.3s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--red-500);
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--red-400);
+}
+
+/* Extensions Grid */
+.extensions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.6rem;
+}
+
+.extension {
+  background-color: var(--neutral-0);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 1rem;
+  border-radius: 7px;
+  justify-content: space-between;
+  min-height: 150px;
+  transition: all 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.extension:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.extension-info {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.extension-logo {
+  height: 4.8rem;
+}
+
+.extension-name {
+  font-size: 1.5rem;
+}
+
+.extension-description {
+  font-size: 1.3rem;
+  color: var(--neutral-600);
+}
+
+.action-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background-color: var(--neutral-0);
+  padding: 2.4rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.modal-overlay.visible .modal {
+  transform: translateY(0);
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.modal-message {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  color: var(--neutral-600);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* ============ STATE STYLES ============ */
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1;
+  min-height: 200px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--neutral-300);
+  border-width: 3px;
+  border-top-color: var(--red-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Error State */
+.error {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--red-500);
+  padding: 2rem;
+  font-size: 1.6rem;
+}
+
+/* Animation States */
+.extension-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.extension-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.extension-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.extension-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* ============ DARK MODE ============ */
+body.dark {
+  background-image: var(--dark-gradient);
+}
+
+.dark .header {
+  background-color: var(--neutral-800);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark .mode-state {
+  background-color: var(--neutral-700);
+  border: none;
+}
+
+.dark .heading,
+.dark .extension-name, .dark .modal-title {
+  color: var(--neutral-0);
+}
+
+.dark .extension {
+  background-color: var(--neutral-800);
+  border: 1px solid var(--neutral-700);
+}
+
+.dark .extension-description,
+.dark .modal-message {
+  color: var(--neutral-300);
+}
+
+.dark .btn {
+  background-color: var(--neutral-700);
+  color: var(--neutral-0);
+  border: 1px solid var(--neutral-700);
+}
+
+.dark .button-states .active-btn {
+  background-color: var(--red-700);
+  color: var(--neutral-700);
+}
+
+.dark .remove-btn {
+  background-color: var(--neutral-800);
+  color: var(--neutral-0);
+  border: 1px solid var(--neutral-600);
+}
+
+.dark .remove-btn:hover {
+  background-color: var(--red-500);
+  color: var(--neutral-700);
+}
+
+.dark .modal {
+  background-color: var(--neutral-800);
+}
+
+.dark .error {
+  color: var(--red-400);
+}
+
+/* Light mode icon states */
+body:not(.dark) .sun-icon {
+  opacity: 0;
+}
+
+body:not(.dark) .moon-icon {
+  opacity: 1;
+}
+
+/* Dark mode icon states */
+.dark .sun-icon {
+  opacity: 1;
+}
+
+.dark .moon-icon {
+  opacity: 0;
+}
+
+/* Light mode styles */
+body:not(.dark) .extension-name {
+  color: var(--neutral-900);
+}
+
+body:not(.dark) .extension-description {
+  color: var(--neutral-600);
+}
+
+body:not(.dark) .remove-btn {
+  color: var(--neutral-600);
+  background-color: var(--neutral-0);
+}
+
+body:not(.dark) .remove-btn:hover{
+  background-color: var(--red-700);
+  color: var(--neutral-0);
+}
+
+body:not(.dark) .btn:not(.active-btn) {
+  color: var(--neutral-600);
+  background-color: var(--neutral-0);
+}
+
+/* ============ ANIMATIONS ============ */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,131 @@
+/* ============ MEDIA QUERIES ============ */
+@media (max-width: 480px) {
+    .header {
+      margin: 1.6rem 1.2rem;
+      padding: 0.8rem;
+    }
+  
+    main {
+      padding: 0 1.6rem;
+    }
+  
+    .logo {
+      height: 2.8rem;
+    }
+  
+    .heading {
+      font-size: 2rem;
+    }
+  
+    .button-states {
+      flex-wrap: wrap;
+      row-gap: 0.6rem;
+    }
+  
+    .btn {
+      padding: 0.4rem 1rem;
+      font-size: 1.2rem;
+    }
+  
+    .extension-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+  
+    .action-btn {
+      margin-top: 1rem;
+    }
+  
+    .modal {
+      width: 95%;
+      padding: 1.6rem;
+    }
+  
+    .modal-actions {
+      flex-direction: column;
+    }
+  
+    .modal-cancel,
+    .modal-confirm {
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 768px) {
+    .header {
+      margin: 2.4rem 2rem;
+    }
+  
+    main {
+      padding: 0 2rem;
+    }
+  
+    .extensions {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .extension-logo {
+      height: 4rem;
+    }
+  
+    .extension-name {
+      font-size: 1.4rem;
+    }
+  
+    .extension-description {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .header {
+      margin: 2.8rem 3.2rem;
+    }
+  
+    main {
+      padding: 0 3.2rem;
+    }
+  
+    .extensions {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    main > div {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .header {
+      margin: 3.2rem 4rem;
+    }
+  
+    main {
+      padding: 0 4rem;
+    }
+  
+    .extensions {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  
+    .extension {
+      padding: 1.2rem;
+    }
+  }
+  
+  @media (min-width: 1281px) {
+    .header {
+      padding: 1.6rem 2.4rem;
+    }
+  
+    .extensions {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2.4rem;
+    }
+  
+    .extension {
+      padding: 1.6rem;
+    }
+  }
