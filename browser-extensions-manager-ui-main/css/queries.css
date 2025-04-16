@@ -129,3 +129,87 @@
       padding: 1.6rem;
     }
   }
+
+  /* ============ EXTRA LARGE DESKTOPS (1440px and up) ============ */
+@media (min-width: 1440px) {
+  .header {
+    margin: 3.2rem auto;
+    padding: 1.6rem 3.2rem;
+    max-width: 1400px;
+  }
+
+  main {
+    max-width: 1400px;
+    padding: 0 6.4rem;
+  }
+
+  .extensions {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.4rem;
+  }
+
+  .extension {
+    padding: 1.8rem;
+    min-height: 180px;
+  }
+
+  .extension-name {
+    font-size: 1.6rem;
+  }
+
+  .extension-description {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    height: 3.6rem;
+  }
+}
+
+/* ============ SUPER LARGE DESKTOPS (1920px and up) ============ */
+@media (min-width: 1920px) {
+  .header {
+    max-width: 1600px;
+    padding: 2rem 4rem;
+    border-radius: 9px;
+  }
+
+  main {
+    max-width: 1600px;
+    padding: 0 8rem;
+  }
+
+  .extensions {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3.2rem;
+  }
+
+  .extension {
+    padding: 2rem;
+    min-height: 200px;
+    border-radius: 9px;
+  }
+
+  .extension-name {
+    font-size: 1.7rem;
+  }
+
+  .extension-description {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .logo {
+    height: 4rem;
+  }
+
+  .heading {
+    font-size: 2.8rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+  }
+}
